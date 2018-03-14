@@ -8,12 +8,17 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "iview": "^2.11.0",
+    "marked": "^0.3.17",
     "vue": "^2.5.13"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.0.0-beta.6",
     "@vue/cli-plugin-eslint": "^3.0.0-beta.6",
     "@vue/cli-service": "^3.0.0-beta.6",
+    "babel-plugin-import": "^1.6.6",
+    "less": "^3.0.1",
+    "less-loader": "^4.1.0",
     "vue-template-compiler": "^2.5.13"
   },
   "babel": {
