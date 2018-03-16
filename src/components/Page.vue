@@ -16,7 +16,9 @@
         v-bind:class="{ active: page.selected.indexOf(index) > -1, withimg: !!item.image }"
         :style="item.image && 'background: url(' + item.image +'); background-position: center;'">
         {{ item.text }}
-        <Icon type="checkmark" v-if="page.selected.indexOf(index) > -1" class="opt-icon"></Icon>
+        <transition name="bounce">
+          <Icon type="checkmark" v-if="page.selected.indexOf(index) > -1" class="opt-icon"></Icon>
+        </transition>
       </div>
     </div>
   </div>
@@ -88,7 +90,6 @@ export default {
   margin-top: 20px;
   border: 2px solid transparent;
   border-radius: 10px;
-  transition: all ease 0.3s;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -102,6 +103,23 @@ export default {
 .withimg {
   height: 100px;
   position: relative;
+}
+
+.bounce-enter-active {
+  animation: bounce ease 0.2s;
+}
+
+.bounce-leave-active {
+  animation: bounce ease 0.2s reverse;
+}
+
+@keyframes bounce {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
 }
 
 </style>

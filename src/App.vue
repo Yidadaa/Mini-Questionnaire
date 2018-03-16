@@ -34,8 +34,6 @@ const state = pages.map(v => {
   })
 })
 
-console.log(state)
-
 export default {
   name: "app",
   components: {

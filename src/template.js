@@ -36,6 +36,11 @@ export const multiple = {
 
 export const pages = [
   merge(single, {
+    description: '为了进行差异化定制，我们需要知道你的性别',
+    options: ['我是汉子', '我是妹子'].map(v => merge(option, {
+      text: v
+    }))
+  }), merge(single, {
     description: '你**期望**这件T恤的价格是多少钱',
     options: ['50元以内', '50~100元', '100~200元', '无限制'].map(v => merge(option, {
       text: v
