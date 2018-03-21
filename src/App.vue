@@ -27,6 +27,7 @@
 <script>
 import Page from "./components/Page";
 import { pages } from "./template";
+import axios from "axios";
 
 const state = pages.map(v => {
   return Object.assign({}, v, {
@@ -68,9 +69,13 @@ export default {
       this.currentIndex = this.currentIndex > 0 ? this.currentIndex - 1 : 0;
     },
     submit() {
-      this.$Notice.open({
-        title: '提交成功',
-        desc: this.pages.map(v => v.selected.join(', ')).join('\n')
+      axios.post('/post', { 
+        selected: this.pages.map(v => v.selected)
+      }).then(res => {
+        this.$Notice.open({
+          title: '提交成功',
+          desc: this.pages.map(v => v.selected.join(', ')).join('\n')
+        })
       })
     },
     change(content, index) {

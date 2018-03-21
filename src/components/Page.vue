@@ -121,5 +121,4 @@ export default {
     transform: scale(1);
   }
 }
-
 </style>
